@@ -7,6 +7,16 @@ import './index.css'
 // className
 // setState接受一个函数或者对象
 
+/**
+ * React:
+ *  1. 声明式开发
+ *  2. 可以与其他框架并存
+ *  3. 组件化
+ *  4. 单项数据流
+ *  5. 视图层的框架
+ *  6. 函数式编程
+ */
+
 export default class TodoList extends Component {
   constructor(props) {
     super(props)
