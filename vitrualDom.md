@@ -43,3 +43,9 @@ JSX -> createElement -> 虚拟DOM -> 真实DOM
 1. 同层比对
 2. 多次setState合并
 3. 循环结构添加key
+
+
+# 提升渲染优化
+1. 组件key
+2. setState合并
+3. showComponentUpdate

@@ -29,6 +29,28 @@ export default class TodoList extends Component {
     this.handleKeyUp = this.handleKeyUp.bind(this)
   }
 
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate')
+    return true
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate')
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
+
+
   getTodoItem() {
     return this.state.list.map((item, idx) => {
       return (
@@ -79,6 +101,7 @@ export default class TodoList extends Component {
   }
 
   render() {
+    console.log('render')
     return (
       <div className='todo-list'>
         <div>
