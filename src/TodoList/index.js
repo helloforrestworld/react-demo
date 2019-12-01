@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import TodoItem from './TodoItem'
 import './index.css'
 
@@ -22,7 +23,7 @@ export default class TodoList extends Component {
     super(props)
     this.state = {
       inputValue: '',
-      list: ['学习React', '学习Vue']
+      list: []
     }
     this.handleBtnClick = this.handleBtnClick.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -35,6 +36,14 @@ export default class TodoList extends Component {
 
   componentDidMount() {
     console.log('componentDidMount')
+    axios.get('https://www.easy-mock.com/mock/5de3c2458739b22f6b171962/example/api/todolist').then(res => {
+      this.setState(() => ({
+        list: res.data
+      }))
+      console.log(res)
+    }).catch(err => {
+      alert(err)
+    })
   }
 
   shouldComponentUpdate() {
