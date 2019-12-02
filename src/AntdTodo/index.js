@@ -39,7 +39,6 @@ export default class AntdTodo extends Component {
     store.dispatch(action)
   }
 
-
   render() {
     return (
       <TodoListUI

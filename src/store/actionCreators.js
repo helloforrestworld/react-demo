@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_TODO_LIST } from './actionTypes'
+import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_TODO_LIST, GET_TODO_LIST } from './actionTypes'
 
 export const getInputChangeAction = (value) => ({
   type: CHANGE_INPUT_VALUE,
@@ -20,11 +19,6 @@ export const initListAction = (list) => ({
   list
 })
 
-export const getTodoList = () => {
-  return (dispatch) => {
-    axios.get('https://www.easy-mock.com/mock/5de3c2458739b22f6b171962/example/api/todolist').then(res => {
-      const action = initListAction(res.data)
-      dispatch(action)
-    })
-  }
-}
+export const getTodoList = () => ({
+  type: GET_TODO_LIST
+})
