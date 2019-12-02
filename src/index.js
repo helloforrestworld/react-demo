@@ -1,17 +1,17 @@
 import ReactDOM from 'react-dom'
-import React, { Fragment } from 'react'
+import React from 'react'
+import { Provider } from 'react-redux'
 import TodoList from './TodoList'
-import Game from './Game'
-import Animate from './Animate'
-import AntdTodo from './AntdTodo'
+import store from './store'
 import './index.css'
 
-ReactDOM.render(
-  <Fragment>
-    <Game />
+const App = (
+  <Provider store={store}>
     <TodoList />
-    <Animate />
-    <AntdTodo />
-  </Fragment>,
+  </Provider>
+)
+
+ReactDOM.render(
+  App,
   document.getElementById('root')
 );
