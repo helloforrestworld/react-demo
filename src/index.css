@@ -33,10 +33,16 @@ body {
 
 /** visibility filters **/
 .filter {
+  overflow: hidden;
+}
+.filter-item {
+  float: left;
   padding: 0.3rem 0;
   margin: 0 0.3rem;
   cursor: pointer;
+  text-decoration: none;
+  list-style: none;
 }
-.filter--active {
+.filter-item--active {
   border-bottom: 1px solid black;
 }

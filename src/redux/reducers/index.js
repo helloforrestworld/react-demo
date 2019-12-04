@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux'
 import todos from './todos'
+import filter from './filter'
 
-export default todos
+export default combineReducers({ todos, filter })
