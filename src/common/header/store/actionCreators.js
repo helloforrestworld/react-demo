@@ -9,11 +9,6 @@ export const searchBlur = () => ({
   type: constants.SEARCH_BLUR
 })
 
-const changeList = (data) => ({
-  type: constants.CHANGE_LIST,
-  data
-})
-
 export const getHeaderList = () => {
   return (dispatch) => {
     axios.get('/api/headerList.json').then(res => {
@@ -25,3 +20,8 @@ export const getHeaderList = () => {
     })
   }
 }
+
+const changeList = (data) => ({
+  type: constants.CHANGE_LIST,
+  data
+})
