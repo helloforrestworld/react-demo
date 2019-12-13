@@ -1,20 +1,8 @@
-const defaultState = {
-  focused: false
-}
+import { combineReducers } from 'redux'
+import { reducer as headerReducer} from '../common/header/store'
 
-export default ( state = defaultState, action ) => {
-  if (action.type === 'search_focus') {
-    return {
-      ...state,
-      focused: true
-    }
-  }
+const reducer = combineReducers({
+  header: headerReducer
+})
 
-  if (action.type === 'search_blur') {
-    return {
-      ...state,
-      focused: false
-    }
-  }
-  return state
-}
+export default reducer
