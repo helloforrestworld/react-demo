@@ -20,9 +20,11 @@ export const Logo = styled.a.attrs({
 `
 
 export const Nav = styled.div`
+  box-sizing: border-box;
   width: 960px;
   height: 100%;
   margin: 0 auto;
+  padding-right: 30px;
 `
 
 export const NavItem = styled.div`
