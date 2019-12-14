@@ -83,3 +83,17 @@ export const ListInfo = styled.div`
     color: #999;
   }
 `
+
+// Recommend组件
+export const RecommendWrapper = styled.div`
+`
+
+export const RecommendItem = styled.div`
+  min-height: 50px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  width: 100%;
+  background: url(${(props) => props.imgUrl}) no-repeat;
+  background-size: contain;
+  cursor: pointer;
+`
