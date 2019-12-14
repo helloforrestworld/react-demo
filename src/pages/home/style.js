@@ -75,6 +75,7 @@ export const ListInfo = styled.div`
     font-size: 18px;
     line-height: 1.5;
     font-weight: bold;
+    cursor: pointer;
   }
   .abstract {
     margin: 0 0 8px;
