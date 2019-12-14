@@ -24,6 +24,19 @@ export const HomeRight = styled.div`
   margin-left: 40px;
 `
 
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+`
+
 // Topic组件
 export const TopicWrapper = styled.div`
   overflow: hidden;

@@ -4,7 +4,8 @@ import { constants } from './index'
 const defaultState = fromJS({
   topicList: [],
   articleList: [],
-  page: 1
+  page: 1,
+  showScroll: false
 })
 
 export default (state = defaultState, action) => {
@@ -19,6 +20,8 @@ export default (state = defaultState, action) => {
         articleList: state.get('articleList').concat(fromJS(action.articleList)),
         page: action.nextPage
       })
+    case constants.TOGGLE_SCROLL_SHOW:
+      return state.set('showScroll', action.show)
     default:
       return state
   }

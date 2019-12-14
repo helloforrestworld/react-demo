@@ -23,6 +23,11 @@ export const getMoreArticle = (page) => {
   }
 }
 
+export const toggleScrollShow = (show) => ({
+  type: constants.TOGGLE_SCROLL_SHOW,
+  show
+})
+
 const changeHomeData = (data) => ({
   type: constants.CHANGE_HOME_DATA,
   ...data
