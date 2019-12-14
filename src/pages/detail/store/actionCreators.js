@@ -4,7 +4,6 @@ import { constants } from './index'
 export const getDetail = () => {
   return (dispatch) => {
     axios.get('/api/detail.json').then(res => {
-      console.log('res: ', res)
       if (res.data.success) {
         dispatch(changeDetail(res.data.data))
       }
