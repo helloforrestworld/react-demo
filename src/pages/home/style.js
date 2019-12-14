@@ -85,6 +85,19 @@ export const ListInfo = styled.div`
   }
 `
 
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  line-height: 40px;
+  background: #a5a5a5;
+  border-radius: 20px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+`
+
 // Recommend组件
 export const RecommendWrapper = styled.div`
 `

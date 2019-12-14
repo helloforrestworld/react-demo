@@ -3,7 +3,8 @@ import { constants } from './index'
 
 const defaultState = fromJS({
   topicList: [],
-  articleList: []
+  articleList: [],
+  page: 1
 })
 
 export default (state = defaultState, action) => {
@@ -12,6 +13,11 @@ export default (state = defaultState, action) => {
       return state.merge({
         topicList: fromJS(action.topicList),
         articleList: fromJS(action.articleList),
+      })
+    case constants.ADD_ARTICLE_LIST:
+      return state.merge({
+        articleList: state.get('articleList').concat(fromJS(action.articleList)),
+        page: action.nextPage
       })
     default:
       return state
