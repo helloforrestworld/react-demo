@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { RecommendWrapper, RecommendItem } from '../style'
 import rec1 from '../../../static/rec1.png'
@@ -7,7 +7,7 @@ import rec3 from '../../../static/rec3.png'
 import rec4 from '../../../static/rec4.png'
 
 
-class Recommend extends Component {
+class Recommend extends PureComponent {
   render() {
     return (
       <RecommendWrapper>
