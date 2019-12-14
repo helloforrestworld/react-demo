@@ -66,6 +66,7 @@ export const NavSearchWrapper = styled.div`
 `
 
 export const SearchInfo = styled.div`
+  z-index: 1;
   position: absolute;
   box-sizing: border-box;
   left: 20px;
