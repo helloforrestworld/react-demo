@@ -24,7 +24,7 @@ export const HomeRight = styled.div`
   margin-left: 40px;
 `
 
-// 子组件
+// Topic组件
 export const TopicWrapper = styled.div`
   overflow: hidden;
   padding: 20px 0 10px 0;
@@ -50,5 +50,36 @@ export const TopicItem = styled.div`
     width:32px;
     height: 32px;
     margin-right: 10px;
+  }
+`
+
+// List组件
+export const ListItem = styled.div`
+  overflow: hidden;
+  margin: 0 0 15px;
+  padding: 15px 2px 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  .pic {
+    float: right;
+    width: 148px;
+    height: 98px;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+  }
+`
+
+export const ListInfo = styled.div`
+  float: left;
+  width: 458px;
+  .title {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .abstract {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
   }
 `
