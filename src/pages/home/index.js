@@ -17,12 +17,12 @@ class Home extends Component {
       <HomeWrapper>
         <HomeLeft>
           <img className='banner-img' src="https://upload.jianshu.io/admin_banners/web_images/4824/066b16f3ca11cfb4f2a47b0ecc53010e0e5e5e95.png?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt="banner-img"/>
-          <Topic></Topic>
-          <List></List>
+          <Topic />
+          <List />
         </HomeLeft>
         <HomeRight>
-          <Recommend></Recommend>
-          <Writer></Writer>
+          <Recommend />
+          <Writer />
         </HomeRight>
       </HomeWrapper>
     )
