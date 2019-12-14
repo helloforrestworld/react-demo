@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { ListItem, ListInfo, LoadMore } from '../style'
 import { actionCreators } from '../store'
 
@@ -12,7 +13,11 @@ class List extends PureComponent {
             return (
               <ListItem key={index}>
                 <ListInfo>
-                  <h3 className='title'>{item.get('title')}</h3>
+                  <h3 className='title'>
+                    <Link to='/detail'>
+                      {item.get('title')}
+                    </Link>
+                  </h3>
                   <p className='abstract'>
                     {item.get('desc')}
                   </p>
