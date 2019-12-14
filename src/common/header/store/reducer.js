@@ -3,7 +3,10 @@ import { constants } from './index'
 
 const defaultState = fromJS({
   focused: false,
-  list: []
+  mouseIn: false,
+  list: [],
+  page: 1,
+  totalPage: 1
 })
 
 export default ( state = defaultState, action ) => {
@@ -13,7 +16,13 @@ export default ( state = defaultState, action ) => {
     case constants.SEARCH_BLUR:
       return state.set('focused', false)
     case constants.CHANGE_LIST:
-      return state.set('list', fromJS(action.data))
+      return state.set('list', fromJS(action.data)).set('totalPage', action.totalPage)
+    case constants.MOUSE_IN:
+      return state.set('mouseIn', true)
+    case constants.MOUSE_LEAVE:
+      return state.set('mouseIn', false)
+    case constants.SET_PAGE:
+      return state.set('page', action.page)
     default:
       return state
   }

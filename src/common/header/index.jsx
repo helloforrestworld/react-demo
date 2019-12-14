@@ -24,19 +24,33 @@ class Header extends Component {
   }
 
   getSearchList() {
-    const { focused, list } = this.props
-    if (focused) {
+    const {
+      focused,
+      mouseIn,
+      list,
+      page,
+      totalPage,
+      handleMouseIn,
+      handleMouseLeave,
+      setPage
+    } = this.props
+
+    const start = (page - 1) * 10
+    const end = page * 10
+    const newList = list.slice(start, end)
+
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo onMouseEnter={handleMouseIn} onMouseLeave={handleMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-                <SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => { setPage(page, totalPage) }}>
               换一批
-                </SearchInfoSwitch>
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {
-              list.map(item => {
+              newList.map(item => {
                 return <SearchInfoItem key={item}>{item}</SearchInfoItem>
               })
             }
@@ -77,7 +91,7 @@ class Header extends Component {
               />
             </CSSTransition>
             <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe62f;</i>
-            { this.getSearchList() }
+            {this.getSearchList()}
           </NavSearchWrapper>
         </Nav>
         <Addition>
@@ -96,6 +110,9 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return {
     focused: state.getIn(['header', 'focused']),
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
     list: state.getIn(['header', 'list'])
   }
 }
@@ -108,6 +125,20 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispatch(actionCreators.searchBlur())
+    },
+    handleMouseIn() {
+      dispatch(actionCreators.mouseIn())
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave())
+    },
+    setPage(page, totalPage) {
+      if (page < totalPage) {
+        page++
+      } else {
+        page = 1
+      }
+      dispatch(actionCreators.setPage(page))
     }
   }
 }
