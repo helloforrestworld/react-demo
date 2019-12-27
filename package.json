@@ -139,6 +139,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/helper-create-regexp-features-plugin": "^7.7.4"
+    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
+    "fork-ts-checker-webpack-plugin-alt": "^0.4.14",
+    "webpack-bundle-analyzer": "^3.6.0"
   }
 }
